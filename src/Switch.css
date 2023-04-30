@@ -1,0 +1,185 @@
+r* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #94bee3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.checkbox {
+  display: none;
+}
+
+.check {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(210.55deg, #484545 -3.02%, #272525 93.08%);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: ease-in 0.5s;
+  z-index: 0;
+}
+
+.check:before {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(210.55deg, #484545 -3.02%, #272525 93.08%);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: ease-in 0.5s;
+  z-index: 0;
+}
+
+.inner-check {
+  position: absolute;
+  width: 170px;
+  height: 70px;
+  top: 15px;
+  left: 15px;
+  background: linear-gradient(210.55deg, #353132 -3.02%, #2b2627 93.08%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 0;
+}
+
+input:checked ~ .check .inner-check:before {
+  transform: translateX(110px);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+
+  width: 50px;
+}
+
+input:checked ~ .check .inner-check:after {
+  transform: translateX(110px);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+
+  width: 40px;
+}
+
+input:disabled ~ .check {
+  opacity: 0.8 !important;
+}
+
+.inner-check:after {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+
+  content: "";
+
+  box-shadow: 0px 0px 100px 1px #7690ed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(66.56deg, #3960ef 11.23%, #7690ed 159.88%);
+
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+.inner-check:before {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+
+  content: "";
+
+  box-shadow: 0px 0px 100px 1px #7690ed;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    linear-gradient(66.56deg, #3960ef 11.23%, #7690ed 159.88%);
+
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+input:checked ~ .check .inner-check:before {
+  transform: translateX(110px);
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+
+  width: 50px;
+}
+
+.square {
+  position: absolute;
+  left: 25px;
+  top: 10px;
+
+  z-index: 3;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 4px;
+
+  opacity: 1;
+  transition: 0.5s ease-out;
+}
+
+input:checked ~ .check .inner-check .square {
+  opacity: 0;
+}
+
+.square .line {
+  height: 6px;
+  width: 50px;
+  background: #ffffff;
+  border-radius: 25.5px;
+}
+
+.square-block {
+  position: absolute;
+  left: 13px;
+  top: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  z-index: 3px;
+  width: 50px;
+  height: 50px;
+  gap: 4px;
+
+  opacity: 0;
+  transition: 0.5s ease-out;
+}
+
+input:checked ~ .check .inner-check .square-block {
+  opacity: 1;
+}
+
+.square-block .line {
+  height: 20px;
+  width: 20px;
+  background: #f8eded;
+  border-radius: 6px;
+}
+
+.square-block .line:before {
+  position: relative;
+  display: block;
+  left: 2px;
+  top: 2px;
+  content: "";
+
+  height: 16px;
+  width: 16px;
+  background: #ffffff;
+  border-radius: 3px;
+}
